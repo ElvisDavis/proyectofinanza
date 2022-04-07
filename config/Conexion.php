@@ -1,9 +1,8 @@
 <?php
 require_once"variable.php";
 
-$conexion= mysqli_connect(DB_HOST,DB_USERNAME,DB_PASSWORD,DB_NAME);
-
-//mysqli_query($conexion, 'SET NAMES "' .DB_ENCODE.'"');
+$conexion = new mysqli(DB_HOST,DB_USERNAME,DB_PASSWORD,DB_NAME);
+mysqli_query($conexion, 'SET NAMES "' .DB_ENCODE.'"');
 //conmdicional para saber si la conexion se realizo corrctamente
 
 if(mysqli_connect_errno()){

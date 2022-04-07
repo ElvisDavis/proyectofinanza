@@ -1,21 +1,18 @@
 <?php
-//Incluimos inicialmente la conexion a la base de datos
+//invcluimos inicialmenter la conexion 
 require "../config/Conexion.php";
 
-Class Usuario{
-
-    //cramos un constructor vacio 
-
+class Usuario{
+    //Implementamos un constructor
     public function __construct()
     {
-
-    {
-        //implememtamos la funcion insertar
         
-    
+    }
 
-
-
+    //implementamos un metodo para insertar
+    public function insertar(){
+        
+    }
 }
 
 ?>
