@@ -35,6 +35,12 @@ if(!function_exists('ejecutarConsulta'))
         return $conexion->insert_id;
     }
 
+    function limpiarCadena($str){
+        global $conexion;
+        $str = mysqli_real_escape_string($conexion, trim($str));
+        return htmlspecialchars($str);
+    }
+
 }
 
 
