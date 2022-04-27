@@ -9,7 +9,7 @@ require 'Link.php';
 		<p class="text-center">
 			Inicia sesión con tu cuenta
 		</p>
-		<form action="" method="POST" autocomplete="off" >
+		<form action="" method="POST" autocomplete="off" id="frmAcceso" >
 			<div class="form-group">
 				<label for="UserName" class="bmd-label-floating"><i class="fas fa-user-secret"></i> &nbsp; Usuario</label>
 				<input type="text" class="form-control" id="UserName" name="usuario" pattern="[a-zA-Z0-9]{1,35}" maxlength="35" required="" >
@@ -39,3 +39,4 @@ require 'Link.php';
 		</form>
 	</div>
 </div>
+<script src="../script/usuario.js"></script>
