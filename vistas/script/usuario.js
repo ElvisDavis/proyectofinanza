@@ -1,3 +1,26 @@
+//funcion que e ejecuata al inicio
+function init() {
+    mostrarform(false);
+
+    $("#formulario").on("submit", function(e) {
+        guardaryeditar(e);
+    })
+}
+
+//función limpiar
+
+function limpiar() {
+    $("#usuario").val("");
+    $("contrasena").val("");
+}
+
+function mostrarform(flag) {
+    limpiar();
+    if (flag) {
+
+    }
+}
+
 $("#frmAcceso").on('submit', function(e) {
     e.preventDefault();
     logina = $("#logina").val();
@@ -12,3 +35,4 @@ $("#frmAcceso").on('submit', function(e) {
             }
         });
 })
+init();

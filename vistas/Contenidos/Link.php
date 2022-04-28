@@ -19,7 +19,7 @@
 <!-- material icons -->
 <link rel="stylesheet" type="text/css" href="../../Archivos/fonts/iconic/css/material-design-iconic-font.min.css">
 
-  <link rel="stylesheet" type="text/css" href="Archivos/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="../../Archivos/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 <!-- Bootstrap Material Design V4.0 -->
 <link rel="stylesheet" href="../../Archivos/css/bootstrap-material-design.min.css">
 
