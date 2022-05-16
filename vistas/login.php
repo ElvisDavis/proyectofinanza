@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <!-- <link rel="stylesheet" href="css/style.css"> -->
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="../css/login.css">
     <!-- Fontawesome CDN Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
@@ -87,9 +87,9 @@
     <footer>
 
     </footer>
-    <script src="jquery-3.6.0.min.js"></script>
+    <script src="../dist/js/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
-    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="./js/script.js"></script>
     <script>
         const phoneInputField = document.querySelector("#telefono");
         const phoneInput = window.intlTelInput(phoneInputField, {
