@@ -10,16 +10,16 @@ class Usuario{
     }
 
     //implementamos un metodo para insertar
-    public function insertar($idempresa, $nombres, $correo, $telefono, $contrasena){
-        $sql = "INSERT INTO usuario(idempresa, nombres, correo, telefono, contrasena,condicion)
-        VALUES ('$idempresa','$nombres','$correo','$telefono','$contrasena','1')";
+    public function insertar($referido, $nombres, $correo, $telefono, $contrasena,$imagen){
+        $sql = "INSERT INTO usuario(referido, nombres, correo, telefono, contrasena,imagen,condicion)
+        VALUES ('$referido','$nombres','$correo','$telefono','$contrasena','$imagen','1')";
         return ejecutarConsulta($sql);
         
     }
 
     //implementamos  un metodo para editar el usuario 
-    public function editar($idusuario,$idempresa,$nombres,$correo,$telefono,$contrasena){
-        $sql="UPDATE usuario SET idempresa='$idempresa',nombres='$nombres',correo='$correo',telefono='$telefono',contrasena='$contrasena'
+    public function editar($idusuario,$referido,$nombres,$correo,$telefono,$contrasena){
+        $sql="UPDATE usuario SET referido='$referido',nombres='$nombres',correo='$correo',telefono='$telefono',contrasena='$contrasena'
         WHERE idusuario='$idusuario'";
         return ejecutarConsulta($sql);
     
@@ -47,8 +47,11 @@ class Usuario{
     }
 
     //implmentamos un metodo para verificar la cuenta 
-    public function verificar($correo,$contrsena){
-        
+    public function verificar($correo,$contrasena){
+
+        $sql = "SELECT id usuario, nombres, correo,imagen
+        FROM usuario WHERE correo='$correo' AND contrasena ='$contrasena' AND estado='1'  ";
+        return ejecutarConsulta($sql);        
 
     }
 

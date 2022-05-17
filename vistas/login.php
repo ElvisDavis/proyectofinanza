@@ -6,6 +6,7 @@
     <!-- <link rel="stylesheet" href="css/style.css"> -->
     <link rel="stylesheet" href="../css/login.css">
     <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="../dist/public/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
 
@@ -43,7 +44,7 @@
 
                 <div class="signup-form" id="registro">
                     <div class="title">Registrarse</div>
-                    <form action="#">
+                    <form action="#" id="formulario">
                         <div class="input-boxes">
                             <div class="input-box">
                                 <i class="fas fa-user"></i>
@@ -74,7 +75,7 @@
 
                             </div>
                             <div class="button input-box">
-                                <input type="submit" value="Registrar" id="btn_registro">
+                                <input type="submit" value="Registrar" id="btnGuardar">
                             </div>
                             <div class="text sign-up-text">Tiene Cuenta? <label onclick="mostrarform(false)">Iniciar Sesión</label></div>
                         </div>
@@ -88,8 +89,11 @@
 
     </footer>
     <script src="../dist/js/jquery-3.6.0.min.js"></script>
+    <script src="../dist/public/js/bootstrap.min.js"></script>
+    
+    <script src="../dist/js/bootbox.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
-    <script type="text/javascript" src="./js/script.js"></script>
+    <script type="text/javascript" src="./js/usuario.js"></script>
     <script>
         const phoneInputField = document.querySelector("#telefono");
         const phoneInput = window.intlTelInput(phoneInputField, {
