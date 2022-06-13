@@ -8,8 +8,6 @@ mysqli_query($conexion, 'SET NAMES "' .DB_ENCODE.'"');
 if(mysqli_connect_errno()){
     printf("Conexion fallida" , mysqli_connect_error());
     exit();
-}else{
-    printf("Conexion exitosa");
 }
 
 //condicion para ejecutar una consulta cualquiera

@@ -10,18 +10,31 @@ class Usuario{
     }
 
     //implementamos un metodo para insertar
-    public function insertar($referido, $nombres, $correo, $telefono, $contrasena,$imagen){
-        $sql = "INSERT INTO usuario(referido, nombres, correo, telefono, contrasena,imagen,condicion)
-        VALUES ('$referido','$nombres','$correo','$telefono','$contrasena','$imagen','1')";
-        return ejecutarConsulta($sql);
+    public function insertar($referido, $nombres, $login, $telefono, $clave,$imagen,$permisos){
+        $sql = "INSERT INTO usuario(referido, nombres, login, telefono, clave,imagen,condicion)
+        VALUES ('$referido','$nombres','$login','$telefono','$clave','$imagen','1')";
+        //Retornamos la consulta
+        $idusuarionew=ejecutarConsulta_retoprnarID($sql);
+        $num_elementos=0;
+        $sw=true;
+        while ($num_elementos < count($permisos)) {
+            # code...
+            $sql_detalle="INSERT INTO usuario_permiso(idusuario, idpermiso)VALUES('$idusuarionew','$permisos[$num_elementos]')";
+            ejecutarConsulta($sql_detalle) or $sw = false;
+            $num_elementos=$num_elementos + 1;
+        }
+        
+        return $sw;  
         
     }
 
     //implementamos  un metodo para editar el usuario 
-    public function editar($idusuario,$referido,$nombres,$correo,$telefono,$contrasena){
-        $sql="UPDATE usuario SET referido='$referido',nombres='$nombres',correo='$correo',telefono='$telefono',contrasena='$contrasena'
+    public function editar($idusuario,$referido,$nombres,$login,$telefono,$clave,$imagen){
+        $sql="UPDATE usuario SET referido='$referido',nombres='$nombres',login='$login',telefono='$telefono',clave='$clave', imagen='$imagen'
         WHERE idusuario='$idusuario'";
         return ejecutarConsulta($sql);
+
+        
     
     }
 
@@ -47,12 +60,18 @@ class Usuario{
     }
 
     //implmentamos un metodo para verificar la cuenta 
-    public function verificar($correo,$contrasena){
+    public function verificar($login,$clave){
 
-        $sql = "SELECT id usuario, nombres, correo,imagen
-        FROM usuario WHERE correo='$correo' AND contrasena ='$contrasena' AND estado='1'  ";
+        $sql = "SELECT idusuario, nombres, login,imagen
+        FROM usuario WHERE login='$login' AND clave ='$clave' AND condicion='1'  ";
         return ejecutarConsulta($sql);        
 
+    }
+
+    //implementamos un metodo para listar los marcados
+    public function listarmarcados($idusuario){
+        $sql="SELECT *FROM usuario_permiso WHERE idusuario='$idusuario'";
+        return ejecutarConsulta($sql);
     }
 
 

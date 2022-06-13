@@ -1,27 +1,30 @@
  function init() {
-     mostrarform(false);
+     mostrarform(true);
 
      $("#formulario").on("submit", function(e) {
          guardaryeditar(e);
-     })
-
+     });
+     //Mostramos los permisos
+     $.post("../ajax/usuario.php?op=permisos&id=", function(r) {
+         $("#permisos").html(r);
+     });
 
  }
 
 
  function limpiar() {
      $("#idusuario").val("");
-     $("#nombre").val("");
-     $("#referencia").val("");
-     $("#correo").val("");
+     $("#nombres").val("");
+     $("#referido").val("");
+     $("#login").val("");
      $("#telefono").val("");
-     $("#contrasena").val("");
+     $("#clave").val("");
  }
 
  function mostrarform(flag) {
      limpiar();
      if (flag) {
-         $("#login").hide();
+         // $("#login").hide();
          $("#registro").show();
          $("#btn-registro").prop("disable", false);
 
@@ -47,21 +50,12 @@
 
          success: function(datos) {
              bootbox.alert(datos);
-             mostrarform(false);
+             $(location).attr("href", "login.html");
              //tabla.ajax.reload();
          }
 
      });
      limpiar();
  }
-
-
-
-
-
-
-
-
-
 
  init();
